@@ -10,11 +10,23 @@ def get_paises():
     ]
         info = list(map(lambda e: f"{e['name']['common']},{e['population']},{round(e['area'])},{e['continents'][0]}\n",todo))
         csv += info
-        print("names", info)
-        print("ARCHIVO LISTO:", csv)
 
     except requests.exceptions.RequestException as error:
         print("Error", error)  
 
-    with open("paises.csv", "w")as archivo:
-        archivo.writelines(csv) 
+    with open("data/paises.csv", "w")as archivo:
+        archivo.writelines(csv)
+
+
+def filtrar_continente(continente):
+    with open("data/paises.csv", "r")as archivo:
+        encabezado = archivo.readline()
+        lineas = archivo.readlines()
+        filtrados = []
+        for i in lineas:
+            fila = i.strip().split(",")
+            if continente in fila:
+                filtrados.append(fila)
+
+    return print(filtrados)            
+                
