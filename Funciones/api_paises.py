@@ -16,4 +16,4 @@ except requests.exceptions.RequestException as error:
     print("Error", error)  
 
 with open("paises.csv", "w")as archivo:
-    archivo.writelines(csv)
+    archivo.writelines(csv) 
