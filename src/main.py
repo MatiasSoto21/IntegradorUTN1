@@ -1,4 +1,6 @@
-from funciones.paises import filtrar_continente, get_paises
+from funciones.paises import get_paises
+from funciones.filtrados import filtrar_continente
+
 
 bandera: bool = True
 
