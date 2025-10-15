@@ -1,0 +1,15 @@
+# Ignorar archivos innecesarios
+__pycache__/
+*.pyc
+*.pyo
+
+# Ignorar entornos virtuales
+.venv/
+venv/
+
+# Ignorar archivos temporales
+*.log
+*.tmp
+
+# Ignorar data generada automáticamente
+data/*.csv
