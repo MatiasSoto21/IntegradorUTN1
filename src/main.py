@@ -1,4 +1,4 @@
-from src.funciones.paises import filtrar_continente, get_paises
+from funciones.paises import filtrar_continente, get_paises
 
 bandera: bool = True
 
@@ -10,6 +10,7 @@ while bandera:
           1)Filtrar paises
           2)
           3)
+          4)SALIR
 """)
     get_paises()
     
@@ -19,4 +20,7 @@ while bandera:
         pass
     elif respuesta == "3":
         pass
+    elif respuesta == "4":
+        bandera = False
+        print("ADIOS")
     else: print("ERROR, opcion no valida, intente de nuevo")
