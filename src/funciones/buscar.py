@@ -33,5 +33,4 @@ def buscar_pais():
                 print(f"{c.capitalize()}: {v}") # armo el print con la columna y el valor de la fila
             print("-----------------")
     else: print("No se encontro ningun pais")
-        
-buscar_pais()      
+             
