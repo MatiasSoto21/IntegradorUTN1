@@ -1,1 +1,2 @@
 requests
+rich #libreria para la consola
