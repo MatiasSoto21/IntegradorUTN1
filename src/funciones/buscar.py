@@ -1,10 +1,15 @@
-def buscar_pais():
+from rich.console import Console # type: ignore
+from rich.table import Table # type: ignore
 
+
+def buscar_pais():
+    console = Console()
+    table = Table(title= "Países :earth_americas:", style="bold")
     encontrado = []
 
     while True:
         try:
-            busqueda = input("Ingresa el nombre del país a buscar: \n").strip()
+            busqueda = console.input("Ingresa el nombre del país a buscar: :mag: \n").strip()
         
             if not busqueda:
                 raise ValueError("El nombre no puede estar vacío")
@@ -20,6 +25,11 @@ def buscar_pais():
 
     with open("data/paises.csv", "r")as archivo:
         encabezado = archivo.readline().strip().split(",")
+        table.add_column(encabezado[0].capitalize(), style="cyan")
+        table.add_column(encabezado[1].capitalize(), style="magenta")
+        table.add_column(encabezado[2].capitalize(), style="green")
+        table.add_column(encabezado[3].capitalize(), style="blue")
+
         lineas = archivo.readlines()
 
         for i in lineas:
@@ -27,10 +37,12 @@ def buscar_pais():
                 encontrado.append(i.strip().split(","))  #me llevo todo el pais con sus datos para despues mostrarlos       
 
     if len(encontrado) > 0:
-        print("\nSe encontraron los siguientes paises: \n")
+        console.print("\n:white_check_mark: Se encontraron los siguientes paises: \n", style="bold underline green")
+
         for i in encontrado:
-            for c,v in zip(encabezado, i):
-                print(f"{c.capitalize()}: {v}") # armo el print con la columna y el valor de la fila
-            print("-----------------")
-    else: print("No se encontro ningun pais")
+            table.add_row(*i)
+                
+        console.print(table)
+    else:      
+        console.print(":x: No se encontro ningun pais :x:", style="bold underline red")
              
