@@ -8,14 +8,19 @@ console = Console()
 
 while bandera:
     respuesta = console.input("""
-          [bold][underline]Bienvenido a la app de Paises![/bold][/underline]
+        [bold][underline]Bienvenido a la app de Paises![/bold][/underline]
                               
-          Elija la opcion deseada
-          ---------------------------------------------------
-          1) Buscar Pais
-          2) Filtrar paises por continente
-          3)
-          4) SALIR
+        Elija la opcion deseada
+        ---------------------------------------------------
+        1) Buscar Pais
+        2) Filtrar paises por continente
+        3) Filtrar por rango de poblacion
+        4) Filtrar por rango de superficie
+        5) Ordenar paises por Nombre
+        6) Ordenar paises por Poblacion                 
+        7) Ordenar paises por Superficie                 
+        8) Mostrar estadisticas                                                       
+        9) SALIR
                           
 """)
     get_paises()
@@ -27,6 +32,16 @@ while bandera:
     elif respuesta == "3":
         pass
     elif respuesta == "4":
+        pass
+    elif respuesta == "5":
+        pass
+    elif respuesta == "6":
+        pass
+    elif respuesta == "7":
+        pass
+    elif respuesta == "8":
+        pass
+    elif respuesta == "9":
         bandera = False
         print("ADIOS")
     else: console.print("[red]ERROR, opcion no valida, intente de nuevo")
