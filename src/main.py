@@ -1,28 +1,32 @@
 from funciones.paises import get_paises
 from funciones.filtrados import filtrar_continente
 from funciones.buscar import buscar_pais
+from rich.console import Console # type: ignore
 
 bandera: bool = True
+console = Console()
 
 while bandera:
-    respuesta = input("""
-          Bienvenido a la app de Paises!
+    respuesta = console.input("""
+          [bold][underline]Bienvenido a la app de Paises![/bold][/underline]
+                              
           Elija la opcion deseada
           ---------------------------------------------------
-          1)Buscar Pais
-          2)Filtrar paises
+          1) Buscar Pais
+          2) Filtrar paises por continente
           3)
-          4)SALIR
+          4) SALIR
+                          
 """)
     get_paises()
     
     if respuesta == "1":
         buscar_pais()        
     elif respuesta == "2":
-        filtrar_continente("Africa")
+        filtrar_continente()
     elif respuesta == "3":
         pass
     elif respuesta == "4":
         bandera = False
         print("ADIOS")
-    else: print("ERROR, opcion no valida, intente de nuevo")
+    else: console.print("[red]ERROR, opcion no valida, intente de nuevo")

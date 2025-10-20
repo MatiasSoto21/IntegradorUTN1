@@ -1,4 +1,4 @@
-import requests
+import requests # type: ignore
 
 def get_paises():
     try:
@@ -8,7 +8,14 @@ def get_paises():
         csv = [
             "nombre,poblacion,superficie,continente\n"
     ]
-        info = list(map(lambda e: f"{e['name']['common']},{e['population']},{round(e['area'])},{e['continents'][0]}\n",todo))
+ 
+        info = list(map(
+        lambda e:  
+        # el pais Saint Helena, Ascension and Tristan da Cunha me daba mal formato en el csv para hacer la tabla asi que aca lo reemplazo
+        f"{'Saint Helena (Tristan da Cunha)' if e['name']['common']=='Saint Helena, Ascension and Tristan da Cunha' else e['name']['common']},{e['population']},{round(e['area'])} km2,{e['continents'][0]}\n",
+        todo
+        ))
+
         csv += info
 
     except requests.exceptions.RequestException as error:

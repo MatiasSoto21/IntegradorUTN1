@@ -21,7 +21,7 @@ def buscar_pais():
             busqueda = busqueda.replace(" ","").lower()  # le quito los espacios y lo pongo en minus al input para despues buscarlo en el csv
             break  # si esta todo bien salgo del while
         except ValueError as e:
-            print(f"Error: {e}")  
+            console.print(f"[red]Error: {e}")  
 
     with open("data/paises.csv", "r")as archivo:
         encabezado = archivo.readline().strip().split(",")
