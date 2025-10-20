@@ -1,6 +1,6 @@
-from funciones.paises import get_paises
-from funciones.filtrados import filtrar_continente
-from funciones.buscar import buscar_pais
+from funciones.getpaises.paises import get_paises
+from funciones.filtros.filtro_continente import filtrar_continente
+from funciones.buscar.buscar import buscar_pais
 from rich.console import Console # type: ignore
 
 bandera: bool = True
