@@ -13,7 +13,7 @@ while bandera:
           Elija la opcion deseada
           ---------------------------------------------------
           1) Buscar Pais
-          2) Filtrar paises
+          2) Filtrar paises por continente
           3)
           4) SALIR
                           
@@ -23,7 +23,7 @@ while bandera:
     if respuesta == "1":
         buscar_pais()        
     elif respuesta == "2":
-        filtrar_continente("Africa")
+        filtrar_continente()
     elif respuesta == "3":
         pass
     elif respuesta == "4":
