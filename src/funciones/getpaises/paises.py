@@ -12,7 +12,7 @@ def get_paises():
         info = list(map(
         lambda e:  
         # el pais Saint Helena, Ascension and Tristan da Cunha me daba mal formato en el csv para hacer la tabla asi que aca lo reemplazo
-        f"{'Saint Helena (Tristan da Cunha)' if e['name']['common']=='Saint Helena, Ascension and Tristan da Cunha' else e['name']['common']},{int(e['population'])},{int(round(e['area']))} km2,{e['continents'][0]}\n",
+        f"{'Saint Helena (Tristan da Cunha)' if e['name']['common']=='Saint Helena, Ascension and Tristan da Cunha' else e['name']['common']},{int(e['population'])},{int(round(e['area']))},{e['continents'][0]}\n",
         todo
         ))
 
