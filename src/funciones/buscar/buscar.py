@@ -33,8 +33,10 @@ def buscar_pais():
         lineas = archivo.readlines()
 
         for i in lineas:
-            if busqueda in i.strip().split(",")[0].replace(" ","").lower(): #al csv tambien le quito los espacios y lo pongo en minus para verificar si existe
-                encontrado.append(i.strip().split(","))  #me llevo todo el pais con sus datos para despues mostrarlos       
+            fila = i.strip().split(",")
+            if busqueda in fila[0].replace(" ","").lower(): #al csv tambien le quito los espacios y lo pongo en minus para verificar si existe
+                fila[2] = fila[2] + " km2"
+                encontrado.append(fila)  #me llevo todo el pais con sus datos para despues mostrarlos       
 
     if len(encontrado) > 0:
         console.print("\n:white_check_mark: Se encontraron los siguientes paises: \n", style="bold underline green")
@@ -45,4 +47,3 @@ def buscar_pais():
         console.print(table)
     else:      
         console.print(":x: No se encontro ningun pais :x:", style="bold underline red")
-             
