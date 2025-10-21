@@ -1,5 +1,6 @@
 from funciones.getpaises.paises import get_paises
 from funciones.filtros.filtro_continente import filtrar_continente
+from funciones.filtros.filtro_poblacion import filtrar_poblacion
 from funciones.buscar.buscar import buscar_pais
 from funciones.ordenamientos.ordenar_nombre import ordenar_nombre
 from rich.console import Console # type: ignore
@@ -31,7 +32,7 @@ while bandera:
     elif respuesta == "2":
         filtrar_continente()
     elif respuesta == "3":
-        pass
+        filtrar_poblacion()
     elif respuesta == "4":
         pass
     elif respuesta == "5":
