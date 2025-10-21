@@ -53,6 +53,7 @@ def filtrar_continente():
             fila = i.strip().split(",")
 
             if any(filtro in elemento for elemento in fila):
+                fila[2] = fila[2] + " km2" #le agrego el km2 para que se muestre en la tabla sino, se muestra solo el numero sin km2
                 filtrados.append(fila)
 
     if filtrados:
