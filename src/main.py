@@ -3,6 +3,7 @@ from funciones.filtros.filtro_continente import filtrar_continente
 from funciones.filtros.filtro_poblacion import filtrar_poblacion
 from funciones.buscar.buscar import buscar_pais
 from funciones.ordenamientos.ordenar_nombre import ordenar_nombre
+from funciones.ordenamientos.ordenar_poblacion import ordenar_poblacion
 from rich.console import Console # type: ignore
 
 bandera: bool = True
@@ -61,7 +62,7 @@ while bandera:
                     print("Error: Intente nuevamente")
         
     elif respuesta == "6":
-        pass
+        ordenar_poblacion()
     elif respuesta == "7":
         pass
     elif respuesta == "8":
