@@ -5,7 +5,7 @@ from funciones.filtros.filtro_superficie import filtrar_superficie
 from funciones.buscar.buscar import buscar_pais
 from funciones.ordenamientos.ordenar_nombre import ordenar_nombre
 from funciones.ordenamientos.ordenar_poblacion import ordenar_poblacion
-
+from funciones.estadisticas.menuEstadistica import menuEstadistica
 from rich.console import Console # type: ignore
 
 bandera: bool = True
@@ -68,7 +68,7 @@ while bandera:
     elif respuesta == "7":
         pass
     elif respuesta == "8":
-        pass
+        menuEstadistica()
     elif respuesta == "9":
         bandera = False
         print("ADIOS")
