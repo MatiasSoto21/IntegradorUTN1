@@ -1,9 +1,11 @@
 from rich.console import Console # type: ignore
 from rich.table import Table # type: ignore
+from rich.panel import Panel # type: ignore
 
 
 def buscar_pais():
     console = Console()
+
     table = Table(title= "Países :earth_americas:", style="bold")
     encontrado = []
 
@@ -21,7 +23,7 @@ def buscar_pais():
             busqueda = busqueda.replace(" ","").lower()  # le quito los espacios y lo pongo en minus al input para despues buscarlo en el csv
             break  # si esta todo bien salgo del while
         except ValueError as e:
-            console.print(f"[red]Error: {e}")  
+            console.print(Panel(f"[red]Error: {e}", title=":x: ERROR"))  
 
     with open("data/paises.csv", "r")as archivo:
         encabezado = archivo.readline().strip().split(",")
@@ -39,7 +41,7 @@ def buscar_pais():
                 encontrado.append(fila)  #me llevo todo el pais con sus datos para despues mostrarlos       
 
     if len(encontrado) > 0:
-        console.print("\n:white_check_mark: Se encontraron los siguientes paises: \n", style="bold underline green")
+        console.print(Panel("\n:white_check_mark: Se encontraron los siguientes paises: \n", style="bold underline green", title= "[green]Exito"))
 
         for i in encontrado:
             table.add_row(*i)

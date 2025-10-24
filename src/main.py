@@ -4,6 +4,7 @@ from funciones.filtros.filtro_poblacion import filtrar_poblacion
 from funciones.buscar.buscar import buscar_pais
 from funciones.ordenamientos.ordenar_nombre import ordenar_nombre
 from funciones.ordenamientos.ordenar_poblacion import ordenar_poblacion
+from funciones.ordenamientos.ordenar_superficie import ordenar_superficie
 from rich.console import Console # type: ignore
 
 bandera: bool = True
@@ -64,7 +65,7 @@ while bandera:
     elif respuesta == "6":
         ordenar_poblacion()
     elif respuesta == "7":
-        pass
+        ordenar_superficie()
     elif respuesta == "8":
         pass
     elif respuesta == "9":
