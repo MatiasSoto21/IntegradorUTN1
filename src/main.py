@@ -5,6 +5,7 @@ from funciones.filtros.filtro_superficie import filtrar_superficie
 from funciones.buscar.buscar import buscar_pais
 from funciones.ordenamientos.ordenar_nombre import ordenar_nombre
 from funciones.ordenamientos.ordenar_poblacion import ordenar_poblacion
+from funciones.ordenamientos.ordenar_superficie import ordenar_superficie
 from funciones.estadisticas.menuEstadistica import menuEstadistica
 from rich.console import Console # type: ignore
 
@@ -66,7 +67,7 @@ while bandera:
     elif respuesta == "6":
         ordenar_poblacion()
     elif respuesta == "7":
-        pass
+        ordenar_superficie()
     elif respuesta == "8":
         menuEstadistica()
     elif respuesta == "9":
