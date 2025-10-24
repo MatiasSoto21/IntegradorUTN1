@@ -1,6 +1,7 @@
 from funciones.getpaises.paises import get_paises
 from funciones.filtros.filtro_continente import filtrar_continente
 from funciones.filtros.filtro_poblacion import filtrar_poblacion
+from funciones.filtros.filtro_superficie import filtrar_superficie
 from funciones.buscar.buscar import buscar_pais
 from funciones.ordenamientos.ordenar_nombre import ordenar_nombre
 from funciones.ordenamientos.ordenar_poblacion import ordenar_poblacion
@@ -36,7 +37,7 @@ while bandera:
     elif respuesta == "3":
         filtrar_poblacion()
     elif respuesta == "4":
-        pass
+        filtrar_superficie()
     elif respuesta == "5":
         while True:
                 print("""
@@ -67,7 +68,7 @@ while bandera:
     elif respuesta == "7":
         ordenar_superficie()
     elif respuesta == "8":
-        pass
+        menuEstadistica()
     elif respuesta == "9":
         bandera = False
         print("ADIOS")
