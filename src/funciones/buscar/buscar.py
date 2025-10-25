@@ -1,37 +1,42 @@
 from rich.console import Console # type: ignore
 from rich.table import Table # type: ignore
 from rich.panel import Panel # type: ignore
-
+from rich.box import HEAVY# type: ignore
+from funciones.utils import paginar_tabla
 
 def buscar_pais():
     console = Console()
-
-    table = Table(title= "Países :earth_americas:", style="bold")
     encontrado = []
-
     while True:
+        console.clear()
         try:
-            busqueda = console.input("Ingresa el nombre del país a buscar: :mag: \n").strip()
-        
+            console.print()
+            console.rule("[bold yellow]Búsqueda de Países[/bold yellow]")
+            busqueda = console.input(
+                "\n:mag: Ingrese el [yellow][underline]nombre[/underline][/yellow] del país a buscar "
+                "o escriba [yellow]'exit'[/yellow] para volver al menu anterior\n"
+                ).strip()
+     
             if not busqueda:
-                raise ValueError("El nombre no puede estar vacío")
+                raise ValueError("El nombre no puede estar vacío.")
         
              # validacion de que sean solo letras y espacios
             if not all(palabra.isalpha() for palabra in busqueda.split()):
-                raise ValueError("El nombre solo puede contener letras y espacios")
+                raise ValueError("El nombre solo puede contener letras y espacios.")
             
             busqueda = busqueda.replace(" ","").lower()  # le quito los espacios y lo pongo en minus al input para despues buscarlo en el csv
+            if busqueda == "exit": 
+                console.clear()
+                return
             break  # si esta todo bien salgo del while
-        except ValueError as e:
-            console.print(Panel(f"[red]Error: {e}", title=":x: ERROR"))  
+        except ValueError as e: 
+            console.clear()
+            console.print("\n",Panel(f"[underline]ERROR:[/underline] {e}",style="bold red",box=HEAVY,  title=":x: ERROR!"))
+            console.input("\nPresione Enter para continuar..")
+
 
     with open("data/paises.csv", "r")as archivo:
         encabezado = archivo.readline().strip().split(",")
-        table.add_column(encabezado[0].capitalize(), style="cyan")
-        table.add_column(encabezado[1].capitalize(), style="magenta")
-        table.add_column(encabezado[2].capitalize(), style="green")
-        table.add_column(encabezado[3].capitalize(), style="blue")
-
         lineas = archivo.readlines()
 
         for i in lineas:
@@ -40,12 +45,9 @@ def buscar_pais():
                 fila[2] = fila[2] + " km2"
                 encontrado.append(fila)  #me llevo todo el pais con sus datos para despues mostrarlos       
 
-    if len(encontrado) > 0:
-        console.print(Panel("\n:white_check_mark: Se encontraron los siguientes paises: \n", style="bold underline green", title= "[green]Exito"))
-
-        for i in encontrado:
-            table.add_row(*i)
-                
-        console.print(table)
-    else:      
-        console.print(":x: No se encontro ningun pais :x:", style="bold underline red")
+    if encontrado:
+        paginar_tabla(encontrado, encabezado, titulo="🌎 Países")
+    else:
+        console.clear()      
+        console.print("\n",Panel(f":x: No se encontro ningun pais 😥",title="ERROR", style="bold red"))
+        console.input("\nPresione Enter para continuar..")

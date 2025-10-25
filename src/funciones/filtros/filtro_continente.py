@@ -1,26 +1,35 @@
 from rich.console import Console # type: ignore
 from rich.table import Table # type: ignore
+from rich.panel import Panel # type: ignore
+from rich.box import HEAVY# type: ignore
+from funciones.utils import paginar_tabla
 
 def filtrar_continente():
     console = Console()
     while True:
+        console.clear()
         try:
+            console.print()
+            console.rule("[bold yellow]Filtro de Paises[/bold yellow]")
             filtro = console.input("""
             [bold][underline] Seleccione el filtro a aplicar: [/bold][/underline]
-            1)Mostrar países de África
-            2)Mostrar países de América del Norte
-            3)Mostrar países de América del Sur
-            4)Mostrar países de Asia
-            5)Mostrar países de Oceania
-            6)Mostrar países de Europa  
-            7)Mostrar países de Antartida                     
+            1) Mostrar países de África
+            2) Mostrar países de América del Norte
+            3) Mostrar países de América del Sur
+            4) Mostrar países de Asia
+            5) Mostrar países de Oceania
+            6) Mostrar países de Europa  
+            7) Mostrar países de Antartida
+            8) Volver al Menú anterior                                       
             """)
 
-            if filtro not in ("1","2","3","4","5","6","7"):
-                raise ValueError("Porfavor seleccione algunas de las opciones (1,2,3,4,5,6 o 7)")
+            if filtro not in ("1","2","3","4","5","6","7","8"):
+                raise ValueError("Porfavor seleccione algunas de las opciones (1-8)")
             break
         except ValueError as e:
-            console.print(f"[red]{e}")    
+            console.clear()
+            console.print("\n",Panel(f"[underline]ERROR:[/underline] {e}",style="bold red",box=HEAVY,  title=":x: ERROR!"))
+            console.input("Presione Enter para continuar..")    
 
     if filtro == "1":
         filtro = "Africa"  
@@ -35,17 +44,12 @@ def filtrar_continente():
     elif filtro == "6":
         filtro = "Europe"  
     elif filtro == "7":
-        filtro = "Antarctica"        
-        
-    table = Table(title= f"Países de {filtro} :earth_americas:", style="bold")
+        filtro = "Antarctica"
+    elif filtro =="8":
+        return            
 
     with open("data/paises.csv", "r")as archivo:
         encabezado = archivo.readline().strip().split(",")
-        table.add_column(encabezado[0].capitalize(), style="cyan")
-        table.add_column(encabezado[1].capitalize(), style="magenta")
-        table.add_column(encabezado[2].capitalize(), style="green")
-        table.add_column(encabezado[3].capitalize(), style="blue")
-
         lineas = archivo.readlines()
         filtrados = []
 
@@ -57,8 +61,6 @@ def filtrar_continente():
                 filtrados.append(fila)
 
     if filtrados:
-        for i in filtrados:
-            table.add_row(*i)
-        return console.print(table)
+        paginar_tabla(filtrados,encabezado, titulo= f"Países de {filtro}")
     else:
         return print("No se encontraron paises para el filtro")
