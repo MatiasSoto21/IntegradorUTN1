@@ -18,8 +18,10 @@ def get_paises():
 
         csv += info
 
-    except requests.exceptions.RequestException as error:
-        print("Error", error)  
+        with open("data/paises.csv", "w")as archivo:
+            archivo.writelines(csv)
 
-    with open("data/paises.csv", "w")as archivo:
-        archivo.writelines(csv)
+    except requests.exceptions.RequestException as error:
+        print(error)
+    except Exception as error:
+        print(error)      
