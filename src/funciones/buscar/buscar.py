@@ -3,7 +3,6 @@ from rich.table import Table # type: ignore
 from rich.panel import Panel # type: ignore
 from rich.box import HEAVY# type: ignore
 from funciones.utils import paginar_tabla
-import math
 
 def buscar_pais():
     console = Console()
