@@ -49,5 +49,5 @@ def buscar_pais():
         paginar_tabla(encontrado, encabezado, titulo="🌎 Países")
     else:
         console.clear()      
-        console.print("\n", Panel( ":x: No se encontro ningun pais 😥", style="bold red"))
+        console.print("\n",Panel(f":x: No se encontro ningun pais 😥",title="ERROR", style="bold red"))
         console.input("\nPresione Enter para continuar..")

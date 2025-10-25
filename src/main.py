@@ -7,6 +7,7 @@ from funciones.ordenamientos.ordenar_nombre import ordenar_nombre
 from funciones.ordenamientos.ordenar_poblacion import ordenar_poblacion
 from funciones.estadisticas.menuEstadistica import menuEstadistica
 from rich.console import Console # type: ignore
+from rich.panel import Panel # type: ignore
 import os
 
 def main():
@@ -15,6 +16,8 @@ def main():
 
     while bandera:
         console.clear() #Se limpia la consola cada vez que se imprime el menu
+        console.print()
+        console.rule("[bold yellow]MENU PRINCIPAL[/bold yellow]")
         if not os.path.exists("data/paises.csv"): #verifico si ya se hizo el request de la api
             get_paises()   
             
@@ -76,6 +79,9 @@ def main():
         elif respuesta == "9":
             bandera = False
             print("ADIOS")
-        else: console.print("[red]ERROR, opcion no valida, intente de nuevo")
+        else:
+            console.clear() 
+            console.print("\n",Panel("[red]ERROR: Porfavor seleccione algunas de las opciones (1-8)", title="ERROR", style="bold red"))
+            console.input("Presione Enter para continuar..")
 if __name__ == "__main__":
     main()        
