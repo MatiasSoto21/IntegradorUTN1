@@ -5,7 +5,7 @@ from funciones.filtros.filtro_superficie import filtrar_superficie
 from funciones.buscar.buscar import buscar_pais
 from funciones.ordenamientos.ordenar_nombre import ordenar_nombre
 from funciones.ordenamientos.ordenar_poblacion import ordenar_poblacion
-from funciones.estadisticas.menuEstadistica import menuEstadistica
+from funciones.ordenamientos.ordenar_superficie import ordenar_superficie
 from rich.console import Console # type: ignore
 from rich.panel import Panel # type: ignore
 import os
