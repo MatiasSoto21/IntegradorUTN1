@@ -1,11 +1,13 @@
 from funciones.getpaises.paises import get_paises
+from funciones.buscar.buscar import buscar_pais
 from funciones.filtros.filtro_continente import filtrar_continente
 from funciones.filtros.filtro_poblacion import filtrar_poblacion
 from funciones.filtros.filtro_superficie import filtrar_superficie
-from funciones.buscar.buscar import buscar_pais
 from funciones.ordenamientos.ordenar_nombre import ordenar_nombre
 from funciones.ordenamientos.ordenar_poblacion import ordenar_poblacion
 from funciones.ordenamientos.ordenar_superficie import ordenar_superficie
+from funciones.estadisticas.menuEstadistica import menuEstadistica
+
 from rich.console import Console # type: ignore
 from rich.panel import Panel # type: ignore
 import os
@@ -73,7 +75,7 @@ def main():
         elif respuesta == "6":
             ordenar_poblacion()
         elif respuesta == "7":
-            pass
+            ordenar_superficie()
         elif respuesta == "8":
             menuEstadistica()
         elif respuesta == "9":
