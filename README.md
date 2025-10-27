@@ -1,6 +1,5 @@
 # IntegradorUTN1
 Integrador paises
-gracias matttt
 
 GUIA
 poner comandos docker en consola en cosola 
