@@ -1,73 +1,72 @@
 from rich.console import Console # type: ignore
 from rich.table import Table # type: ignore
+from rich.panel import Panel # type: ignore
+from rich.box import HEAVY# type: ignore
+from funciones.utils import paginar_tabla
 
 def filtrar_superficie():
     console = Console()
 
     while True:  #Validacion del rango minimo
+        console.clear()
         try:
-            sup_min = input("Ingrese superficie mínima: ")
+            console.print()
+            console.rule("[bold yellow]Filtrar por rango de Superficie[/bold yellow]")
+            sup_min = console.input("Ingrese superficie (km2) [underline]Mínima[/underline] → ")
 
             if " " in sup_min:
-                raise ValueError("ERROR: No se permiten espacios")
+                raise ValueError("No se permiten espacios")
 
             if not sup_min.isdigit():
-                raise ValueError("ERROR: Solo se permiten valores numéricos enteros y positivos")
+                raise ValueError("Solo se permiten valores numéricos enteros y positivos")
 
             sup_min = int(sup_min)
 
             if sup_min < 0:
-                raise ValueError("ERROR: La superficie mínima debe ser positiva")
+                raise ValueError("La superficie mínima debe ser positiva")
 
             break #si esta todo bien salgo del while
         except ValueError as e:
-            console.print(f"[red]{e}")
+            console.clear()
+            console.print("\n",Panel(f"[underline]ERROR:[/underline] {e}",style="bold red",box=HEAVY,  title=":x: ERROR!"))
+            console.input("Presione Enter para continuar..")
 
     while True: # Validacion del rango máximo
         try:
-            sup_max = input("Ingrese superficie máxima: ")
+            sup_max = console.input("Ingrese superficie (km2) [underline]Máxima[/underline] → ")
 
             if " " in sup_max:
-                raise ValueError("ERROR: No se permiten espacios")
+                raise ValueError("No se permiten espacios")
 
             if not sup_max.isdigit():
-                raise ValueError("ERROR: Solo se permiten valores numéricos enteros y positivos")
+                raise ValueError("Solo se permiten valores numéricos enteros y positivos")
 
             sup_max = int(sup_max)
 
             if sup_max <= sup_min:
-                raise ValueError("ERROR: La superficie máxima debe ser mayor a la superficie mínima")
+                raise ValueError("La superficie máxima debe ser mayor a la superficie mínima")
 
             break#si ta todo bien salgo
         except ValueError as e:
-            console.print(f"[red]{e}")
-
-    table = Table(title= f"Países con rango de superficie entre: {sup_min} km2 y {sup_max} km2 :earth_americas:", style="bold")
+            console.clear()
+            console.print("\n",Panel(f"[underline]ERROR:[/underline] {e}",style="bold red",box=HEAVY,  title=":x: ERROR!"))
+            console.input("Presione Enter para continuar..")
 
     with open("data/paises.csv", "r")as archivo:
-        paises = []
         encabezado = archivo.readline().strip().split(",")
-        table.add_column(encabezado[0].capitalize(), style="cyan")
-        table.add_column(encabezado[1].capitalize(), style="magenta")
-        table.add_column(encabezado[2].capitalize(), style="green")
-        table.add_column(encabezado[3].capitalize(), style="blue")
-
         lineas = archivo.readlines()
+        filtrados = []
         
         for i in lineas:
             fila = i.strip().split(",")
-            paises.append(dict(zip(encabezado,fila)))
-
-        filtrados = [] #me guardo los filtrados aca 
-        for i in paises:
-            if int(i["superficie"]) >= sup_min and int(i["superficie"]) <= sup_max:
-                filtrados.append([i['nombre'], i['poblacion'], i['superficie']+" km2", i['continente']])
-                
-
+            #paises.append(dict(zip(encabezado,fila)))
+            if int(fila[2]) >= sup_min and int(fila[2]) <= sup_max:
+                fila[2] = fila[2] + " km2"
+                filtrados.append(fila)
 
         if filtrados:
-            for i in filtrados:
-                table.add_row(*i)
-               
-            console.print("\n",table)    
-        else: console.print("No se encontro ningun pais con ese rango de superficie.", style="bold underline red")   
+            paginar_tabla(filtrados,encabezado, titulo= f"Países con rango de superficie entre {sup_min}-{sup_max}")
+   
+        else:
+            console.print("No se encontro ningun pais con ese rango de superficie.", style="bold underline red")
+            console.input("Presione Enter para continuar..")
