@@ -50,7 +50,7 @@ def ordenar_superficie():
             
             for i, pais in enumerate(paises_ordenados, 1):
                 # Formatear número con puntos 
-                superficie_bonita = f"{pais['superficie']:,.0f}".replace(",", ".")
+                superficie_bonita = f"{pais['superficie']:,.0f} km²".replace(",", ".")
                 print(f"{i:<2} {pais['nombre']:<15} {superficie_bonita:<15} {pais['continente']:<12}")
                 
             print(f"\n💡 Total de países mostrados: {len(paises_ordenados)}")

@@ -1,7 +1,7 @@
 from .mayorYmenorPoblacion import estadistica_poblacion
 from .promedioPoblacion import estadistica_poblacionContinente
-
-
+from .promedioSuperficie import estadistica_superficie
+from .cantidad_continente_pais import estadistica_pais
 
 def menuEstadistica():
     while True:
@@ -14,15 +14,15 @@ def menuEstadistica():
             print("4) Cantidad de países por continente")
             print("5) Regresar al menú principal")
             print("="*50)
-            opcion=input("Elija una opcion del 1 al 3: ")
+            opcion=input("Elija una opcion del 1 al 5: ")
             if opcion == "1":
                 estadistica_poblacion()
             elif opcion == "2":
                 estadistica_poblacionContinente()
             elif opcion == "3":
-                pass
+                estadistica_superficie()
             elif opcion == "4":
-                pass    
+                estadistica_pais()
             elif opcion == "5":
                 break
             else:

@@ -1,5 +1,5 @@
 # IntegradorUTN1
-# 🌍 Proyecto Integrador – Gestión de Datos de Países en Python
+Integrador paises
 
 ## 🧠 Descripción del programa
 Este proyecto es una aplicación desarrollada en **Python 3** que permite **gestionar, analizar y obtener estadísticas de un conjunto de países** a partir de un archivo CSV.  
