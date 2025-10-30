@@ -24,20 +24,21 @@ def main():
             get_paises()   
             
         respuesta = console.input("""
-            [bold][underline]Bienvenido a la app de Paises![/bold][/underline]
+[bold][underline][green]Bienvenido a la app de Paises![/green][/bold][/underline]
 
-            Elija la opcion deseada
-            ---------------------------------------------------
-            1) Buscar Pais
-            2) Filtrar paises por continente
-            3) Filtrar por rango de poblacion
-            4) Filtrar por rango de superficie
-            5) Ordenar paises por Nombre
-            6) Ordenar paises por Poblacion                 
-            7) Ordenar paises por Superficie                 
-            8) Mostrar estadisticas                                                       
-            9) SALIR
-    """)
+[yellow]Elija la opcion deseada[/yellow]
+---------------------------------------------------
+1) Buscar Pais
+2) Filtrar paises por continente
+3) Filtrar por rango de poblacion
+4) Filtrar por rango de superficie
+5) Ordenar paises por Nombre
+6) Ordenar paises por Poblacion                 
+7) Ordenar paises por Superficie                 
+8) Mostrar estadisticas                                                       
+9) SALIR
+
+""")
 
         if respuesta == "1":
             asegurar_archivo(console)
