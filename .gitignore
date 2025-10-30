@@ -11,5 +11,3 @@ venv/
 *.log
 *.tmp
 
-# Ignorar data generada automáticamente
-data/*.csv
