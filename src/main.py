@@ -54,30 +54,7 @@ def main():
             filtrar_superficie()
         elif respuesta == "5":
             asegurar_archivo(console)
-            while True:
-                    print("""
-                --------- Paises Ordenados --------- 
-                1) Ordenados de la A-Z (Ascendente)
-                2) Ordenados de la Z-A (Descendente)
-                """)
-                    opcion:str=input("Elija un opcion (1-2): ")
-                    if opcion == "1":
-                        paises_ordenados = ordenar_nombre(orden="A-Z")
-
-                        console.print("\n[bold green]=== Países Ordenados A-Z ===[/bold green]")
-                        for i, pais in enumerate(paises_ordenados, 1):
-                            console.print(f"{i}. {pais}")
-                        break
-                    elif opcion=="2":
-                        paises_ordenados = ordenar_nombre(orden="Z-A")
-
-                        console.print("\n[bold green]=== Países Ordenados Z-A ===[/bold green]")
-                        for i, pais in enumerate(paises_ordenados, 1):
-                            console.print(f"{i}. {pais}")
-                        break
-                    else:
-                        print("Error: Intente nuevamente")
-
+            ordenar_nombre()
         elif respuesta == "6":
             asegurar_archivo(console)
             ordenar_poblacion()
