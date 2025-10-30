@@ -50,14 +50,13 @@ El proyecto puede ejecutarse tanto de forma local como dentro de un **entorno Do
             8) Mostrar estadisticas                                                       
             9) SALIR
 
-            Ingreso 1-Buscar Pais
-
-    ```bash        
+# Ingreso 1-Buscar Pais
+      
         ───────────────────────────────────────────── Búsqueda de Paises 
 
     🔍 Ingrese el nombre del país a buscar o escriba 'exit' para volver al menu anterior
-    Escribo: "guay"
-    
+    #Escribo: "guay"
+
      ────────────────────────────╮
     │ ✅ Resultados encontrados: │
     ╰────────────────────────────╯
@@ -70,9 +69,9 @@ El proyecto puede ejecutarse tanto de forma local como dentro de un **entorno Do
     │ Paraguay │ 7132530   │ 406752 km2 │ South America │
     └──────────┴───────────┴────────────┴───────────────┘
     Página (1/1)
-    
+
     Escriba 's' para siguiente | 'a' para anterior | 'e' para salir
-    
+
 
 ### Integrantes
 Soto Matías
