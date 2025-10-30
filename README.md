@@ -28,13 +28,16 @@ El proyecto puede ejecutarse tanto de forma local como dentro de un **entorno Do
 1. Abrir una terminal en la carpeta raíz del proyecto.
 
 2. Construir la imagen de Docker (el nombre puede ser cualquiera):
+    ```bash
     docker build -t nombre_ejemplo .
 
 3. Ejecutar el contenedor con el siguiente comando:
+    ```bash
     docker run -it --rm -v ${PWD}:/app nombre_ejemplo
 
 ### Ejemplos de entradas y salidas
 
 ### Integrantes
-Soto Matías
+Soto Matías\n
+
 Pereyra Agustín
