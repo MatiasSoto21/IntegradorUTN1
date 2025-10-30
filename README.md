@@ -1,5 +1,4 @@
 # IntegradorUTN1
-Integrador paises
 
 ## 🧠 Descripción del programa
 Este proyecto es una aplicación desarrollada en **Python 3** que permite **gestionar, analizar y obtener estadísticas de un conjunto de países** a partir de un archivo CSV.  
@@ -38,6 +37,6 @@ El proyecto puede ejecutarse tanto de forma local como dentro de un **entorno Do
 ### Ejemplos de entradas y salidas
 
 ### Integrantes
-Soto Matías\n
+Soto Matías
 
 Pereyra Agustín
