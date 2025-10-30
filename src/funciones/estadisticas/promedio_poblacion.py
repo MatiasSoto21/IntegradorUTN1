@@ -56,4 +56,5 @@ def estadistica_poblacionContinente():
 
         promedioTodos = totalSuma / cantidad
 
-    return console.print(f"El promedio de poblacion de {'todos los paises' if continente == 'todos' else 'los paises de ' + continente} es: {promedioTodos:.2f}")             
+    console.print(f"El promedio de poblacion de {'todos los paises' if continente == 'todos' else 'los paises de ' + continente} es: {promedioTodos:.2f}")
+    console.input("Presione Enter para continuar...")

@@ -21,4 +21,5 @@ def estadistica_poblacion():
         table.add_row(*pais_mayor.values())
         table.add_row(*pais_menor.values())
 
-    console.print(table)         
+    console.print(table)
+    console.input("Presione Enter para continuar...")

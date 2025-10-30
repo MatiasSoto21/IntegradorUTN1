@@ -1,7 +1,7 @@
 import csv
-from rich.console import Console
-from rich.table import Table
-from rich.panel import Panel
+from rich.console import Console # type: ignore
+from rich.table import Table # type: ignore
+from rich.panel import Panel # type: ignore
 
 # Crear una consola para usar Rich (como un print mejorado)
 console = Console()
@@ -92,6 +92,7 @@ def estadistica_pais():
             border_style="green"
         )
     )
+    console.input("Presione Enter para continuar...")
 
 # Si quieres probar la función directamente
 if __name__ == "__main__":
