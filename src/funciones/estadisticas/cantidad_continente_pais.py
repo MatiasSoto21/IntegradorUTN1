@@ -7,6 +7,10 @@ from rich.panel import Panel # type: ignore
 console = Console()
 
 def estadistica_pais():
+    console.clear()
+    print()
+    print()
+
     # 1. CARGAR DATOS
     try:
         with open("data/paises.csv", 'r', encoding='utf-8') as archivo:

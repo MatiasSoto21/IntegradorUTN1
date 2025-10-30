@@ -110,6 +110,9 @@ def mostrar_paises_paginados(paises, titulo, orden_texto):
     
     while True:
         console.clear()
+        print()
+        print()
+
         
         # Crear tabla
         table = Table(
