@@ -89,7 +89,7 @@ def main():
             menu_estadistica()
         elif respuesta == "9":
             bandera = False
-            print("ADIOS")
+            console.print("[green][bold]GRACIAS POR USAR LA APP, ADIOS")
         else:
             console.clear() 
             console.print("\n",Panel("[red]ERROR: Porfavor seleccione algunas de las opciones (1-8)", title="ERROR", style="bold red"))
