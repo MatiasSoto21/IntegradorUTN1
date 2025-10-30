@@ -90,8 +90,8 @@ def ordenar_superficie():
         except Exception as e:
             console.print(f"\n[bold red]❌ ERROR: {e}[/bold red]")
         
-        console.print("\n")
-        input("Presiona Enter para continuar...")
+            console.print("\n")
+            input("Presiona Enter para continuar...")
 
 def mostrar_paginacion_simple(console, paises, titulo, estilo_titulo):
     """Paginación simple sin navegación compleja"""

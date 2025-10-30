@@ -4,23 +4,24 @@ from rich.console import Console # type: ignore
 
 def estadistica_poblacionContinente():
     console = Console()
-
+    console.clear()
     while True:
         try:
             continente = console.input("""
-            [bold][underline] Seleccione el continente del cual desea saber el promedio de Poblacion [/bold][/underline]
-            1)Promedio de Poblacion de África
-            2)Promedio de Poblacion de América del Norte
-            3)Promedio de Poblacion de América del Sur
-            4)Promedio de Poblacion de Asia
-            5)Promedio de Poblacion de Oceania
-            6)Promedio de Poblacion de Europa  
-            7)Promedio de Poblacion de Antartida     
-            8)Promedio de poblacion de Todos los países           
-            """)
+[bold][underline] Seleccione el continente del cual desea saber el promedio de Poblacion [/bold][/underline]
+1)Promedio de Poblacion de África
+2)Promedio de Poblacion de América del Norte
+3)Promedio de Poblacion de América del Sur
+4)Promedio de Poblacion de Asia
+5)Promedio de Poblacion de Oceania
+6)Promedio de Poblacion de Europa  
+7)Promedio de Poblacion de Antartida     
+8)Promedio de poblacion de Todos los países           
+
+""")
 
             if continente not in ("1","2","3","4","5","6","7", "8"):
-                raise ValueError("Porfavor seleccione algunas de las opciones (1,2,3,4,5,6,7 u 8)")
+                raise ValueError("Porfavor seleccione algunas de las opciones (1-8)")
             break
         except ValueError as e:
             console.print(f"[red]{e}")    

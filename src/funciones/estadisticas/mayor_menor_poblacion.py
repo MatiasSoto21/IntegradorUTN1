@@ -4,6 +4,7 @@ from rich.console import Console # type: ignore
 
 def estadistica_poblacion():
     console = Console()
+    console.clear()
     table = Table(title="Países con Mayor y Menor Poblacion")
     estilos = ["cyan", "magenta", "green", "blue"]
 
