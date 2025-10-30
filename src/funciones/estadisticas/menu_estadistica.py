@@ -1,6 +1,6 @@
-from .mayorYmenorPoblacion import estadistica_poblacion
-from .promedioPoblacion import estadistica_poblacionContinente
-from .promedioSuperficie import estadistica_superficie
+from .mayor_menor_poblacion import estadistica_poblacion
+from .promedio_poblacion import estadistica_poblacionContinente
+from .promedio_superficie import estadistica_superficie
 from .cantidad_continente_pais import estadistica_pais
 
 def menuEstadistica():
