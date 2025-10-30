@@ -66,7 +66,7 @@ def estadistica_pais():
     # Agregar columnas a la tabla
     tabla.add_column("Continente", style="bold cyan", width=15)
     tabla.add_column("Cantidad", style="bold yellow", justify="center")
-    tabla.add_column("Porcentaje", style="bold green", justify="center")
+    
     
     # Ordenamos los continentes alfabéticamente para mejor presentación
     continentes_ordenados = sorted(conteo_continentes.items())
@@ -83,7 +83,6 @@ def estadistica_pais():
         tabla.add_row(
             f"📍 {continente}",
             f"{cantidad} países",
-            f"{porcentaje:.1f}%"
         )
     
     # Mostrar la tabla
