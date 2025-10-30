@@ -6,8 +6,8 @@ from funciones.filtros.filtro_superficie import filtrar_superficie
 from funciones.ordenamientos.ordenar_nombre import ordenar_nombre
 from funciones.ordenamientos.ordenar_poblacion import ordenar_poblacion
 from funciones.ordenamientos.ordenar_superficie import ordenar_superficie
-from funciones.estadisticas.menu_estadistica import menuEstadistica
-
+from funciones.estadisticas.menu_estadistica import menu_estadistica
+from funciones.utils import asegurar_archivo
 from rich.console import Console # type: ignore
 from rich.panel import Panel # type: ignore
 import os
@@ -40,14 +40,19 @@ def main():
     """)
 
         if respuesta == "1":
+            asegurar_archivo(console)
             buscar_pais()        
         elif respuesta == "2":
+            asegurar_archivo(console)
             filtrar_continente()
         elif respuesta == "3":
+            asegurar_archivo(console)
             filtrar_poblacion()
         elif respuesta == "4":
+            asegurar_archivo(console)
             filtrar_superficie()
         elif respuesta == "5":
+            asegurar_archivo(console)
             while True:
                     print("""
                 --------- Paises Ordenados --------- 
@@ -73,11 +78,14 @@ def main():
                         print("Error: Intente nuevamente")
 
         elif respuesta == "6":
+            asegurar_archivo(console)
             ordenar_poblacion()
         elif respuesta == "7":
+            asegurar_archivo(console)
             ordenar_superficie()
         elif respuesta == "8":
-            menuEstadistica()
+            asegurar_archivo(console)
+            menu_estadistica()
         elif respuesta == "9":
             bandera = False
             print("ADIOS")

@@ -3,7 +3,7 @@ from .promedio_poblacion import estadistica_poblacionContinente
 from .promedio_superficie import estadistica_superficie
 from .cantidad_continente_pais import estadistica_pais
 
-def menuEstadistica():
+def menu_estadistica():
     while True:
             print("\n" + "="*50)
             print("🌎 Seleccione la estadistica que quiere consultar")

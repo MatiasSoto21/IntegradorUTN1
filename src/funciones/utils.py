@@ -1,7 +1,9 @@
 from rich.console import Console # type: ignore
 from rich.table import Table # type: ignore
 from rich.panel import Panel # type: ignore
+from funciones.getpaises.paises import get_paises
 import math
+import os
 
 def paginar_tabla(items, encabezado, titulo="", items_por_pagina=10):
     """
@@ -43,3 +45,8 @@ def paginar_tabla(items, encabezado, titulo="", items_por_pagina=10):
             pagina_actual -= 1
         elif opcion == "e":
             break
+
+def asegurar_archivo(console):
+    if not os.path.exists("data/paises.csv"):
+        console.print("[yellow]El archivo 'paises.csv' no existe. Descargando datos desde la API...[/yellow]")
+        get_paises()        
