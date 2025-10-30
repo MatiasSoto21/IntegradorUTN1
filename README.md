@@ -1,6 +1,6 @@
 # IntegradorUTN1
 
-## 🧠 Descripción del programa
+##  Descripción del programa
 Este proyecto es una aplicación desarrollada en **Python 3** que permite **gestionar, analizar y obtener estadísticas de un conjunto de países** a partir de un archivo CSV.  
 El sistema fue diseñado aplicando los principios de **programación modular**, utilizando **listas, diccionarios y funciones** para mantener el código claro, reutilizable y bien organizado.
 
@@ -35,6 +35,44 @@ El proyecto puede ejecutarse tanto de forma local como dentro de un **entorno Do
     docker run -it --rm -v ${PWD}:/app nombre_ejemplo
 
 ### Ejemplos de entradas y salidas
+    ```bash
+    Bienvenido a la app de Paises!
+
+            Elija la opcion deseada
+            ---------------------------------------------------
+            1) Buscar Pais
+            2) Filtrar paises por continente
+            3) Filtrar por rango de poblacion
+            4) Filtrar por rango de superficie
+            5) Ordenar paises por Nombre
+            6) Ordenar paises por Poblacion                 
+            7) Ordenar paises por Superficie                 
+            8) Mostrar estadisticas                                                       
+            9) SALIR
+
+            Ingreso 1-Buscar Pais
+
+    ```bash        
+        ───────────────────────────────────────────── Búsqueda de Paises 
+
+    🔍 Ingrese el nombre del país a buscar o escriba 'exit' para volver al menu anterior
+    Escribo: "guay"
+    
+     ────────────────────────────╮
+    │ ✅ Resultados encontrados: │
+    ╰────────────────────────────╯
+                          🌎 Países                      
+    ┏━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┓
+    ┃ Nombre   ┃ Poblacion ┃ Superficie ┃ Continente    ┃
+    ┡━━━━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━━━━━━━━━┩
+    │ Uruguay  │ 3473727   │ 181034 km2 │ South America │
+    ├──────────┼───────────┼────────────┼───────────────┤
+    │ Paraguay │ 7132530   │ 406752 km2 │ South America │
+    └──────────┴───────────┴────────────┴───────────────┘
+    Página (1/1)
+    
+    Escriba 's' para siguiente | 'a' para anterior | 'e' para salir
+    
 
 ### Integrantes
 Soto Matías
