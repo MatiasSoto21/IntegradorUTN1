@@ -67,7 +67,6 @@ def estadistica_pais():
     tabla.add_column("Continente", style="bold cyan", width=15)
     tabla.add_column("Cantidad", style="bold yellow", justify="center")
     
-    
     # Ordenamos los continentes alfabéticamente para mejor presentación
     continentes_ordenados = sorted(conteo_continentes.items())
     
