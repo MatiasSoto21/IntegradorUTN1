@@ -71,5 +71,6 @@ def main():
             console.clear() 
             console.print("\n",Panel("[red]ERROR: Porfavor seleccione algunas de las opciones (1-8)", title="ERROR", style="bold red"))
             console.input("Presione Enter para continuar..")
+            
 if __name__ == "__main__":
     main()        

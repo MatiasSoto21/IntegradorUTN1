@@ -12,16 +12,17 @@ def filtrar_continente():
             console.print()
             console.rule("[bold yellow]Filtro de Paises[/bold yellow]")
             filtro = console.input("""
-            [bold][underline] Seleccione el filtro a aplicar: [/bold][/underline]
-            1) Mostrar países de África
-            2) Mostrar países de América del Norte
-            3) Mostrar países de América del Sur
-            4) Mostrar países de Asia
-            5) Mostrar países de Oceania
-            6) Mostrar países de Europa  
-            7) Mostrar países de Antartida
-            8) Volver al Menú anterior                                       
-            """)
+[bold][underline][yellow] Seleccione el filtro a aplicar: [/bold][/underline][/yellow]
+1) Mostrar países de África
+2) Mostrar países de América del Norte
+3) Mostrar países de América del Sur
+4) Mostrar países de Asia
+5) Mostrar países de Oceania
+6) Mostrar países de Europa  
+7) Mostrar países de Antartida
+8) Volver al Menú anterior                                       
+
+""")
 
             if filtro not in ("1","2","3","4","5","6","7","8"):
                 raise ValueError("Porfavor seleccione algunas de las opciones (1-8)")
