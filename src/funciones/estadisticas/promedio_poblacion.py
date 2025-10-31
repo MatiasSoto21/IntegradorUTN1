@@ -1,14 +1,16 @@
 import csv
 from rich.table import Table # type: ignore
 from rich.console import Console # type: ignore
+from rich.panel import Panel # type: ignore
+from rich.box import HEAVY# type: ignore
 
-def estadistica_poblacionContinente():
+def estadistica_poblacion_continente():
     console = Console()
-    console.clear()
     while True:
+        console.clear()
         try:
             continente = console.input("""
-[bold][underline] Seleccione el continente del cual desea saber el promedio de Poblacion [/bold][/underline]
+[bold][underline][yellow] Seleccione el continente del cual desea saber el promedio de Poblacion [/bold][/underline][/yellow]
 1)Promedio de Poblacion de África
 2)Promedio de Poblacion de América del Norte
 3)Promedio de Poblacion de América del Sur
@@ -24,7 +26,9 @@ def estadistica_poblacionContinente():
                 raise ValueError("Porfavor seleccione algunas de las opciones (1-8)")
             break
         except ValueError as e:
-            console.print(f"[red]{e}")    
+            console.clear()
+            console.print("\n",Panel(f"[underline]ERROR:[/underline] {e}",style="bold red",box=HEAVY,  title=":x: ERROR!"))
+            console.input("\nPresione Enter para continuar..")
 
     if continente == "1":
         continente = "Africa"  

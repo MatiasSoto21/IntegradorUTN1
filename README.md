@@ -50,7 +50,7 @@ El proyecto puede ejecutarse tanto de forma local como dentro de un **entorno Do
             8) Mostrar estadisticas                                                       
             9) SALIR
 
-# Ingreso 1-Buscar Pais
+Ingreso 1-Buscar Pais
       
         ───────────────────────────────────────────── Búsqueda de Paises 
 
@@ -72,6 +72,11 @@ El proyecto puede ejecutarse tanto de forma local como dentro de un **entorno Do
 
     Escriba 's' para siguiente | 'a' para anterior | 'e' para salir
 
+
+### LINKS
+
+Video: https://www.youtube.com/watch?si=x0sVcb-ajBi_yWv5&v=uhh8eJi8P8c&feature=youtu.be
+CarpetaDigital(GoogleDrive): https://drive.google.com/drive/folders/1wtY8J5zDjcjz2uo0UIJC96HrNafIiWKn?usp=sharing
 
 ### Integrantes
 Soto Matías
